@@ -23,6 +23,8 @@ function call($endpoint, $type = NULL, $data_string = NULL)
   $secret_token = '';
   curl_setopt($ch, CURLOPT_USERPWD, $secret_token.':x-oauth-basic');
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_USERAGENT,'GitHub-API');
+
   $contents = curl_exec($ch);
   curl_close($ch);
 
